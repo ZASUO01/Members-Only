@@ -1,0 +1,76 @@
+.message-box{
+    width: 98%;
+    max-width: 700px;
+    border: 1px solid #9c9c9c;
+    border-radius: 10px;
+    padding: 20px 10px;
+    position: relative;
+}
+
+.message-box h1{
+    margin-top: 30px;
+}
+
+.user-status{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: 1px solid #4a4a4a;
+    color: #4a4a4a;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.delete-message{
+    position: absolute;
+    top: 10px;
+    right: 100px;
+    background-color: #b33b3b;
+    color: white;
+    border-radius: 10px;
+    padding: 5px 10px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.message-box-content{
+    width: 100%;
+    padding: 15px;
+    background-color: #ccc;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 300;
+    color: #4a4a4a;
+}
+
+.message-box-credentials{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.message-box-credentials p{
+    font-size: 15px;
+    font-weight: 400;
+    color: #4a4a4a;
+}
+
+@media screen and (min-width: 560px){
+    .message-box{
+        width: 90%;
+        padding: 20px 40px;
+    }
+    .user-status{
+        font-size: 17px;
+    }
+    .delete-message{
+        font-size: 17px;
+    }
+    .message-box-content{
+        padding: 20px;
+        font-size: 15px;
+    }
+}

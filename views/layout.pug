@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="shortcut icon", href="/images/icon.ico", type="image/x-icon")
+        link(rel="stylesheet", href="/stylesheets/main.css")
+        link(rel="stylesheet", href="/stylesheets/messages.css")
+        title #{title}
+    body
+        header(class="header")
+            div(class="container")
+                a(href="/" class="logo") Members Only
+                div(class="nav")
+                    if user
+                        a(href="/create_post" class="btn btn-lg  user-actions") Create a post 
+                        a(href="/become_member" class="btn btn-lg  user-actions") Become a member
+                        a(href="/log-out" class="btn btn-sm log-out") Log out
+                                   
+                    else
+                        a(href="/log-in" class="btn btn-md log-in") Log in
+                        a(href="/sign-up" class="btn btn-md sign-up") Sign up 
+            
+        block content

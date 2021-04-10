@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    div(class="view-container p-35")
+        if user
+            form(class="operation-form" action="" method="POST")
+                h1 Become a member
+                if errors
+                    ul(class="error-ul")
+                        each error in errors
+                            li(class="error-li") !! #{error.msg}
+                input(class="form-input" type="password" name="password" placeholder="Club secret key" required)
+                input(type="submit" value="send" class="form-btn")
+        else
+            h1(class="view-title-1") You need to log in first!

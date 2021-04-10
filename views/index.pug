@@ -1,0 +1,26 @@
+extends layout
+
+block content
+    div(class="view-container p-60")
+        if user
+            h1(class="view-title title-0 mb-40") Wellcome #{user.first_name} #{user.last_name}
+        else
+            h1(class="view-title title-0 mb-40") Join to post something
+        if messages.length > 0
+            for message in messages
+                div(class="message-box mb-40") 
+                    div(class="user-status") #{message.user.membership_status}
+                    if user && user.admin
+                        a(href=`/${message._id}/delete` class="delete-message") Delete
+                    h1(class="view-title title-2 mb-10") #{message.title}
+                    div(class="message-box-content mb-10")
+                        p #{message.message}
+                    div(class="message-box-credentials")
+                        if user && user.membership_status != 'Visitant'
+                            p #{message.user.first_name} #{message.user.last_name}
+                            p #{message.formatted_date}
+                        else
+                            p Unknown
+                            p Unknown date
+        else
+            h1(class="view-title-1") No messages yet! 
